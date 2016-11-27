@@ -1,0 +1,27 @@
+<template name="accountPage">
+  <div class="container">
+    {{consoleLog Schemas}}
+    {{#if accountReady}}
+      {{#unless accountData.socialLogin}}
+        <h3>Change password</h3>
+        {{> quickForm
+          schema=Schemas.ChangePassword
+          buttonContent="Save"
+          type="normal"
+          id="changePasswordForm"}}
+      {{/unless}}
+    <hr>
+    <h3>Change username</h3>
+    {{> quickForm
+      schema=Schemas.ChangeUsername
+      type="method-update"
+      buttonContent="Save"
+      meteormethod="users.changeUsername"
+      singleMethodArgument=true
+      doc=accountData
+      id="changeUsernameForm"}}
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  </div>
+</template>

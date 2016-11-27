@@ -1,0 +1,40 @@
+<template name="nav">
+  <div class="containe">
+    <ul id="dropdown1" class="dropdown-content dropdown-nav">
+      <p class="center-align blue-grey-text text-darken-2"><strong>{{currentUser.username}}</strong></p>
+      {{#if currentUser}}
+      <li><a href="{{pathFor 'App.connections'}}">Connections</a></li>
+      <li><a href="{{pathFor 'App.settings.profile'}}">Settings</a></li>
+      {{/if}}
+      <li class="divider"></li>
+      <li><a class="js-logout" href="">Sign out</a></li>
+    </ul>
+    <nav>
+     <div class="nav-wrapper">
+       <a class="brand-logo left {{isActiveRoute regex='homePage'}}" href="{{pathFor 'App.home_page'}}">Coachor</a>
+       <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
+       <ul class="right">
+         <li>
+           <a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons left">alarm_on</i><span class="new badge">{{notificationsCount}}</span></a>
+         </li>
+         <li class="">
+           <a class="dropdown-button" href="#!" data-activates="dropdown1">
+              <img src="http://placehold.it/150x150" class="avatar circle" alt="">
+             <i class="material-icons right">arrow_drop_down</i>
+           </a>
+         </li>
+       </ul>
+       <!--<ul class="side-nav" id="mobile-demo">
+         <li><a href="#">About</a></li>
+       </ul>-->
+     </div>
+   </nav>
+   <div>
+     <ul id="dropdown2" class="dropdown-content dropdown-nav">
+       {{#each notifications}}
+         {{> notification}}
+       {{/each}}
+    </ul>
+   </div>
+  </div>
+</template>

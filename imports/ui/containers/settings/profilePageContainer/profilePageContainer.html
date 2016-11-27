@@ -1,0 +1,5 @@
+<template name="profilePageContainer">
+  <a class="{{isActiveRoute 'App.settings.profile'}} list-group-item" href="{{pathFor 'App.settings.profile'}}">Profile</a>
+  <a class="{{isActiveRoute 'App.settings.account'}} list-group-item" href="{{pathFor 'App.settings.account'}}">Account</a>
+  {{> profilePage Schemas=Schemas profileData=profileData profileReady=profileReady}}
+</template>

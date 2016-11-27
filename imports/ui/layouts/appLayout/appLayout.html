@@ -1,0 +1,14 @@
+<template name="appLayout">
+  <div class="">
+    {{#if currentUser}}
+      {{#if notificationsReady}}
+        {{> Template.dynamic template=nav data=notifications}}
+      {{/if}}
+    {{/if}}
+    {{> flashMessages}}
+    {{#if loggedUserDataReady}}
+      {{> Template.dynamic template=main data=loggedUserData}}
+    {{/if}}
+  </div>
+  {{> Template.dynamic template=footer}}
+</template>

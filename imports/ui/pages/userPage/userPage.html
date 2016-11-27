@@ -1,0 +1,22 @@
+<template name="userPage">
+  <div class="container">
+    {{#if userDataReady}}
+      <h2>{{userData.name}}</h2>
+      <h4>{{userData.username}}</h4>
+      <div class=""></div>
+      {{#if checkConnectionStatus.aproved}}
+        <a class="js-disconnect-user waves-effect waves-light btn red" data-userId="{{userData._id}}"><i class="material-icons right" data-userId="{{userData._id}}">remove</i>Disconnect </a>
+      {{/if}}
+      {{#if checkConnectionStatus.invited}}
+        Invited pending to accept
+      {{/if}}
+      {{#unless checkConnectionStatus.invited}}
+        {{#unless checkConnectionStatus.aproved}}
+          <a class="js-add-user waves-effect waves-light btn" data-userId="{{userData._id}}"><i class="material-icons right" data-userId="{{userData._id}}">add</i>Add</a>
+        {{/unless}}
+      {{/unless}}
+    {{else}}
+    {{> loading}}
+    {{/if}}
+  </div>
+</template>

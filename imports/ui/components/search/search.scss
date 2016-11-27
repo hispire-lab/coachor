@@ -1,0 +1,23 @@
+.search-wrapper {
+  position: relative;
+  input[type=search] {
+    padding: 0 1rem;
+    border: 0;
+    width: 100%;
+    margin: 0;
+    &:focus {
+      border: 0 !important;
+      box-shadow: none;
+    }
+  }
+}
+.search-wrapper > i.material-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+.search-results {
+  padding: 0 1rem 1rem 1rem;
+  border-top: 1px solid #d7d7d7;
+}

@@ -1,0 +1,17 @@
+<template name="profilePage">
+  <div class="container">
+    <h3>Profile</h3>
+    {{#if profileReady}}
+    {{> quickForm
+      schema=Schemas.EditProfile
+      type="method-update"
+      meteormethod="users.updateProfile"
+      singleMethodArgument=true
+      doc=profileData
+      buttonContent="Save"
+      id="editProfileForm"}}
+    {{else}}
+    <p>Loading...</p>
+    {{/if}}
+  </div>
+</template>

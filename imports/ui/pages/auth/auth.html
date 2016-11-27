@@ -1,0 +1,10 @@
+<template name="auth">
+  <div class="container">
+    <h1 class="text-center">Welcome to Coachor</h1>
+    {{# if state}}
+      {{> atForm state=state}}
+    {{else}}
+      {{> atForm}}
+    {{/if}}
+  </div>
+</template>

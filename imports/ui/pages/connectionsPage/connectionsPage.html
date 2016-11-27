@@ -1,0 +1,12 @@
+<template name="connectionsPage">
+  <h3>Connections</h3>
+  {{#if userConnectionsReady}}
+    {{#if connections}}
+      {{#each connections}}
+        <p>{{username}} <strong>{{name}}</strong> </p>
+      {{/each}}
+    {{else}}
+      <p>No connections found :( go find some!</p>
+    {{/if}}
+  {{/if}}
+</template>

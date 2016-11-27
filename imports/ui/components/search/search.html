@@ -1,0 +1,26 @@
+<template name="search">
+  <div class="contain">
+    <div class="row">
+      <div class="col s12 m6">
+        <h4>Find users</h4>
+        <div class="search-wrapper card">
+          <input id="search" name="search" type="search" required>
+          <i class="material-icons">search</i>
+          <div class="search-results">
+            {{#if searching}}
+              {{> loading}}
+            {{else}}
+              {{#each searchResults}}
+                <p class="">
+                  <a href="{{pathFor 'App.user' username=username}}"><strong>{{name}}</strong> <span>{{username}} {{emails.[0].address}}</span></a>
+                </p>
+              {{else}}
+                <!--<p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>-->
+              {{/each}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
