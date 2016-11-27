@@ -4,7 +4,6 @@
   "scripts": {
     "start": "meteor run"
   },
-<<<<<<< HEAD
   "eslintConfig": {
     "parser": "babel-eslint",
     "parserOptions": {
@@ -49,10 +48,5 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-meteor": "^4.0.1",
     "eslint-plugin-react": "^6.7.1"
-=======
-  "dependencies": {
-    "meteor-node-stubs": "~0.2.0",
-    "babel-runtime": "6.18.0"
->>>>>>> f0b9feec24709ad3f91acedbbb72469c54351951
   }
 }
